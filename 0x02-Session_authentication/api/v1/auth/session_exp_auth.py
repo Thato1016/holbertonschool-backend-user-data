@@ -1,49 +1,55 @@
 #!/usr/bin/env python3
-"""
-Add an expiration date to a Session ID.
-"""
+"""Define SessionExpAuth class."""
+
 from api.v1.auth.session_auth import SessionAuth
 from os import getenv
-from datetime import datetime as d
+from datetime import datetime, timedelta
 
 
 class SessionExpAuth(SessionAuth):
-    """
-    Add an expiration date to a Session ID.
-    """
+    '''SessionAuth class for session expiry.'''
+
     def __init__(self):
-        """
-        Initializes the class.
-        """
-        SESSION_DURATION = getenv('SESSION_DURATION')
-        if not SESSION_DURATION or type(SESSION_DURATION) is not int:
+        '''Initialize instance'''
+        try:
+            self.session_duration = int(getenv('SESSION_DURATION', 0))
+        except ValueError:
             self.session_duration = 0
-        self.session_duration = int(SESSION_DURATION)
 
     def create_session(self, user_id=None):
-        """
-        Create a Session ID.
-        """
-        created_at = d.now()
-        session_dict = {"user_id": user_id, "created_at": created_at}
-
+        '''Create session associated with user id. '''
         session_id = super().create_session(user_id)
         if session_id is None:
             return None
-        self.user_id_by_session_id[session_id] = session_dict
+
+        SessionExpAuth.user_id_by_session_id[session_id] = {
+            'user_id': user_id,
+            'created_at': datetime.now()
+        }
+
         return session_id
 
     def user_id_for_session_id(self, session_id=None):
-        """
-        Return user_id from a session dictionary.
-        """
-        if session_id is None or \
-                not self.user_id_by_session_id.has_key(session_id):
+        '''Return user ID'''
+        if session_id is None:
             return None
+
+        session_dict = SessionExpAuth.user_id_by_session_id.get(
+            session_id, None)
+        if session_dict is None:
+            return None
+        if 'created_at' not in session_dict:
+            return None
+
         if self.session_duration <= 0:
-            return "user_id"
-        if not self.session_dic.has_key(created_at):
+            return session_dict.get('user_id')
+
+        creation_time = session_dict.get('created_at')
+
+        session_length = timedelta(seconds=self.session_duration)
+
+        expiry_time = creation_time + session_length
+
+        if expiry_time < datetime.now():
             return None
-        if (self.session_dic.get(created_at) + session_duration) < d.now:
-            return None
-        return self.session_dic.get('user_id')
+        return session_dict.get('user_id')
