@@ -12,4 +12,4 @@
 - [0x00-personal_data](https://github.com/Thato1016/holbertonschool-backend-user-data/tree/main/0x00-personal_data)
 - [0x01-Basic_authentication](https://github.com/Thato1016/holbertonschool-backend-user-data/tree/main/0x01-Basic_authentication)
 - [0x02-Session_authentication](https://github.com/Thato1016/holbertonschool-backend-user-data/tree/main/0x02-Session_authentication)
-- [0x03-user_authentication_service]([https://github.com/jbocane6/holbertonschool-backend-user-data/tree/master/0x03-user_authentication_service](https://github.com/Thato1016/holbertonschool-backend-user-data/tree/main/0x03-user_authentication_service))
+- [0x03-user_authentication_service](https://github.com/Thato1016/holbertonschool-backend-user-data/tree/main/0x03-user_authentication_service)
