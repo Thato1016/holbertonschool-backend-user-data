@@ -3,7 +3,8 @@
   
   <p align="center">
     <a href="[https://twitter.com/juanoso07555284](https://twitter.com/tbkhosa)" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="juanoso07555284" height="30" width="40" /></a>
-  <a href="https://www.linkedin.com/in/thato-khosa-079643109>lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B5B0ZE4VTTXCoSfBxrO93hw%3D%3D" target="blank"><img align="center" src="https://raw.githubusercontent.com/Thato1016/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="juan-camilo-bocanegra-osorio-18b1821a6" height="30" width="40" /></a>
+  <a href="https://www.linkedin.com/in/thato-khosa-079643109?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B5B0ZE4VTTXCoSfBxrO93hw%3D%3D" target="blank">
+      <img align="center" src="https://raw.githubusercontent.com/Thato1016/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="Thato-Khosa-18b1821a6" height="30" width="40" /></a>
   </p>
 
 ### Repository with scripts of evidences:
